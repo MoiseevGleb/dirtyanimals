@@ -16,15 +16,23 @@ class Product extends Model
         'price',
         'publishDate',
         'isPublished',
+        'image',
     ];
 
     protected $casts = [
-        'publishDate' => 'datetime:Y-m-d',
+        'publishDate' => 'datetime:Y-m-d H:i:s',
         'isPublished' => 'boolean',
     ];
 
-    public function setDateAttribute($value)
+    public function setPublishDateAttribute($value)
     {
-        $this->attributes['publishDate'] = Carbon::parse($value)->format('Y-m-d');
+        $this->attributes['publishDate'] = Carbon::parse($value)->format('Y-m-d H:i:s');
+    }
+
+    public function getPublishDateAttribute($value)
+    {
+        if ($this->attributes['publishDate'] !== null)
+            return Carbon::parse($value)->format('Y-m-d\TH:i');
+        else return "";
     }
 }

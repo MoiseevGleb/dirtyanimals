@@ -13,7 +13,7 @@
                 </button>
                 <div class="menu__list" id="menu">
                     <a href="{{ route('market.index') }}" class="header__nav-link">MARKET</a>
-                    <a href="#" class="header__nav-link">CART</a>
+                    <a href="{{ route('cart.index') }}" class="header__nav-link">CART{{ App\Models\Cart::getCount() > 0 ? "(".App\Models\Cart::getCount().")" : '' }}</a>
                     @guest
                         <a href="{{ route('login.index') }}" class="header__nav-link">LOGIN</a>
                         <a href="{{ route('register.index') }}" class="header__nav-link">REGISTER</a>
@@ -23,11 +23,12 @@
                             <a class="header__nav-link" href="{{ route('admin.index') }}">ADMIN PANEL</a>
                         @endif
                         <a href="{{ route('user.index') }}" class="header__nav-link">{{ auth()->user()->name }}</a>
+                        <a href="{{ route('news.index') }}" class="header__nav-link">NEWS</a>
                         <a href="{{ route('logout') }}" class="header__nav-link">
-                            <form action="{{ route('logout') }}" method="post">
-                                @csrf
-                                <button type="submit">LOGOUT</button>
-                            </form>
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button type="submit">LOGOUT</button>
+                        </form>
                         </a>
                     @endauth
                 </div>

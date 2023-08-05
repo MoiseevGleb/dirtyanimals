@@ -1,4 +1,4 @@
-@extends('layouts.private')
+@extends('layouts.admin')
 @section('title', 'Редактировать новость')
 
 @section('content')
@@ -21,9 +21,10 @@
         </div>
         <button class="button" type="submit">Сохранить</button>
     </form>
-    <form action="{{ route('admin.news.delete', $news->id) }}" method="POST" class="input-list" style="margin-top: 10px;">
+    <form action="{{ route('admin.news.delete', $news->id) }}" method="POST" class="input-list" style="margin: 10px 0;">
         @csrf
         @method('DELETE')
         <button class="button" type="submit">Удалить</button>
     </form>
+    <a class="button" href="{{ route('admin.news') }}">Назад</a>
 @endsection

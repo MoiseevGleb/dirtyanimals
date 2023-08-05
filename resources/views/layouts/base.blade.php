@@ -18,17 +18,11 @@
             <p>{{ session()->get('error') }}</p>
         </div>
     @endif
-    <div class="wrapper">
-        @if(routeIsMarket())
-            @include('includes.header')
-        @else
-            @include('includes.header-main')
-        @endif
-
-        <main class="main">
+    <div class="wrapper" id="app">
+        @include('includes.header')
+        <main class="main" style="position:relative;">
             @yield('content')
         </main>
-
         @include('includes.footer')
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>

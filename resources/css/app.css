@@ -35,12 +35,9 @@ a{
 }
 
 .header{
-    padding: 20px 0;
     background-color: transparent;
-    position: absolute;
     left: 0;
     right: 0;
-    z-index: 5;
 }
 
 .main{
@@ -102,7 +99,7 @@ a{
 }
 
 .swiper-slide{
-    height: 100vh;
+    height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -137,7 +134,7 @@ a{
 .crew{
     font-size: 48px;
     text-align: center;
-    padding-bottom: 60px;   
+    padding-bottom: 60px;
 }
 
 .crew__title{
@@ -163,7 +160,7 @@ a{
 .crew__list{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px; 
+    gap: 40px;
 }
 
 .crew__item-img{
@@ -173,7 +170,7 @@ a{
     margin-bottom: 20px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: -40px 0px;
+    background-position: -40px;
 }
 
 .crew__item-name{
@@ -189,7 +186,7 @@ a{
 }
 
 .concerts{
-    height: 100vh;
+    margin-bottom: 50px;
 }
 
 .concert__title{
@@ -229,6 +226,7 @@ a{
 }
 
 .form-card {
+    max-height: 350px;
     font-size: 18px;
     padding: 25px;
     color: #000;
@@ -265,7 +263,7 @@ input#nickname:not(:placeholder-shown) ~ label {
     transform: translateY(-50%);
 }
 
-.form-input input#nickname, 
+.form-input input#nickname,
 .form-input input#password {
     font-size: 18px;
     outline: none;
@@ -333,7 +331,7 @@ input#nickname:not(:placeholder-shown) ~ label {
         color: #151515;
     }
 
-    .header__nav-link:honer{
+    .header__nav-link:hover{
         color: #cecece;
         transition: 0.3s;
     }
@@ -374,8 +372,8 @@ input#nickname:not(:placeholder-shown) ~ label {
 }
 
 .session-error{
+    position: absolute;
     z-index: 100;
-    margin-bottom: 10;
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -384,7 +382,7 @@ input#nickname:not(:placeholder-shown) ~ label {
 }
 
 .section__header{
-    font-size: 32px;
+    font-size: 72px;
     text-align: center;
     font-weight: 700;
     margin:30px 0 50px;
@@ -449,7 +447,6 @@ input#nickname:not(:placeholder-shown) ~ label {
 .to-cart:hover{
     background-color: #000;
     color: #fff;
-    background-color: #000;
     transition: .7s ease;
 }
 
@@ -522,14 +519,21 @@ input#nickname:not(:placeholder-shown) ~ label {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 300px;
+    width: 310px;
     border-right: 1px solid black;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+.aside__logo{
+    display: flex;
+    align-items: center;
 }
 
 .aside__title{
     font-size: 32px;
-    margin: 10px;
-    align-self: flex-start;
 }
 
 .aside__item{
@@ -542,18 +546,19 @@ input#nickname:not(:placeholder-shown) ~ label {
 }
 
 .private__content{
+    margin-left: 310px;
     width: 100%;
-    height: 100vh;
-    padding: 10px 30px;
+    height: 100%;
+    padding: 15px;
 }
 
 .section__info{
     font-size: 20px;
-    margin: 15px 0 40px;
+    margin: 15px 0 25px;
 }
 
 .private__content-title{
-    font-size: 32px;
+    font-size: 52px;
 }
 
 .table{
@@ -581,7 +586,7 @@ tr:hover{
 }
 
 .flex-ceil{
-    display: flex; 
+    display: flex;
     justify-content: space-between;
 }
 
@@ -607,7 +612,7 @@ tr:hover{
 }
 
 .item-list{
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 .input-list{
@@ -634,4 +639,28 @@ tr:hover{
 
 input[type="checkbox"]{
     background-color: transparent;
+}
+
+.admin-all-title {
+    margin-top: 20px;
+    font-size: 32px;
+}
+
+.visible-error {
+    transform: translateY(-100%);
+    transition: transform 1s ease;
+}
+
+.hr {
+    margin: 30px 0;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    border: 0;
+    height: 1px;
+}
+
+.input-file {
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 10px;
+    max-width: 300px;
 }

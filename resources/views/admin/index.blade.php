@@ -1,4 +1,4 @@
-@extends('layouts.private')
+@extends('layouts.admin')
 @section('title', 'Панель Администратора')
 
 @section('info')
@@ -6,5 +6,5 @@
 @endsection
 
 @section('content')
-    
+
 @endsection

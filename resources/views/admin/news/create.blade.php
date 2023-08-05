@@ -1,7 +1,7 @@
-@extends('layouts.private')
+@extends('layouts.admin')
 @section('title', 'Написать новость')
 
-@section('info', 'Новости')
+@section('info', 'Написать новость')
 
 @section('content')
     <form action="{{ route('admin.news.store') }}" class="input-list" method="POST">
@@ -19,7 +19,8 @@
             @error('content')
             <div class="error">{{  $message }}</div>
             @enderror
+            <button class="button" type="submit" style="margin: 10px 0">Сохранить</button>
+            <a class="button" href="{{ route('admin.news') }}">Назад</a>
         </div>
-        <button class="button" type="submit">Сохранить</button>
     </form>
 @endsection

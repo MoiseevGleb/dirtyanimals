@@ -21,12 +21,13 @@
 <div class="wrapper">
     <div class="aside__view">
         <aside class="aside">
-            <a href="{{ route('home') }}"><h1 class="aside__title">{{ config('app.name') }}</h1></a>
+            <a href="{{ route('home') }}" class="aside__logo"><img src="{{ asset('storage/images/logo.svg') }}" class="logo__img" alt="logo.svg"><h1 class="aside__title">{{ config('app.name') }}</h1></a>
             <a href="{{ route('admin.index') }}" class="aside__item">Главная</a>
             <a href="{{ route('admin.users') }}" class="aside__item">Пользователи</a>
             <a href="{{ route('admin.products') }}" class="aside__item">Товары</a>
             <a href="{{ route('admin.news') }}" class="aside__item">Новости</a>
-            <a href="{{ route('admin.users') }}" class="aside__item">Картинки слайдера</a>
+            <a href="{{ route('admin.slider') }}" class="aside__item">Картинки слайдера</a>
+            <a href="{{ route('admin.concerts') }}" class="aside__item">Концерты</a>
         </aside>
 
         <div class="private__content">
